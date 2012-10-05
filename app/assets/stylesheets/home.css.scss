@@ -1,0 +1,34 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.target-nav {
+	font-size: 50px;
+	$radius: 139px;
+	.upper-left {
+		padding: 45px 0px 18px 60px;
+		@include border-top-left-radius($radius);
+	}
+	.lower-left {
+		padding: 18px 0px 45px 60px;
+		@include border-bottom-left-radius($radius);
+	}
+	.upper-right {
+		padding: 45px 0px 18px 40px;
+		@include border-top-right-radius($radius);
+	}
+	.lower-right {
+		padding: 18px 0px 45px 40px;
+		@include border-bottom-right-radius($radius);
+	}
+	a {
+		display: block;
+		border: 1px solid black;
+		color: #333;
+		&:hover {
+			text-decoration: none;
+			color: white;
+			background: #333;
+		}
+	}
+}
+
