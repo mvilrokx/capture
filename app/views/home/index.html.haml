@@ -2,19 +2,23 @@
 	.row
 		.span12
 			%h1 Welcome to Capture
-	.target-nav
-		.row
-			.span2.offset3
-				%a.upper-left{:href => "#"} 
-					%i.icon-camera-retro
-			.span2
-				%a.upper-right{:href => "#"}
-					%i.icon-pencil
-		%p
-		.row
-			.span2.offset3
-				%a.lower-left{:href => "#"} 
-					%i.icon-user
-			.span2
-				%a.lower-right{:href => "#"} 
-					%i.icon-bullhorn
+	.row
+		.span9.offset3
+			%ul.inline-block-list
+				%li
+					%a.top-left{:href => new_picture_path} 
+						%i.icon-camera-retro
+				%li
+					%a.top-right{:href => "#"} 
+						%i.icon-pencil
+	.row
+		.span9.offset3
+			%ul.inline-block-list
+				%li
+					%a.bottom-left{:href => "#"} 
+						%i.icon-user
+				%li
+					%a.bottom-right{:href => "#"} 
+						%i.icon-bullhorn
+
+

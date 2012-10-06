@@ -1,34 +1,48 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.target-nav {
-	font-size: 50px;
-	$radius: 139px;
-	.upper-left {
-		padding: 45px 0px 18px 60px;
-		@include border-top-left-radius($radius);
-	}
-	.lower-left {
-		padding: 18px 0px 45px 60px;
-		@include border-bottom-left-radius($radius);
-	}
-	.upper-right {
-		padding: 45px 0px 18px 40px;
-		@include border-top-right-radius($radius);
-	}
-	.lower-right {
-		padding: 18px 0px 45px 40px;
-		@include border-bottom-right-radius($radius);
-	}
-	a {
-		display: block;
-		border: 1px solid black;
-		color: #333;
-		&:hover {
-			text-decoration: none;
-			color: white;
-			background: #333;
+.inline-block-list {
+	@include inline-block-list;
+	$size: 150px;
+	$font-size: 60px; 
+	font-size: $font-size;
+	li {
+		a {
+			display: block;
+		 	@include box-sizing(border-box);
+			// cursor:crosshair;
+			@include transition(background .15s ease-in-out, color .15s ease-in-out);
+			width: $size;
+			height: $size;
+			text-align: center;
+			color: #333;
+			margin-right: -17px;
+			&:hover {
+				text-decoration: none;
+				color: white;
+				background: #333;
+			}
+			border: 1px solid black;
+			&.top-left {
+				@include border-top-left-radius($size);
+				padding-top: $font-size + 15;
+				padding-left: 15px;
+			}
+			&.top-right {
+				@include border-top-right-radius($size);
+				padding-top: $font-size + 15;
+				padding-right: 15px;
+			}
+			&.bottom-left {
+				@include border-bottom-left-radius($size);
+				padding-top: $font-size - 15;
+				padding-left: 15px;
+			}
+			&.bottom-right {
+				@include border-bottom-right-radius($size);
+				padding-top: $font-size - 15;
+				padding-right: 15px;
+			}
 		}
 	}
 }
-

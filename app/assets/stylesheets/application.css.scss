@@ -11,18 +11,21 @@
 // Imports
 //-----------------------------------------
 @import "compass/css3";
+@import "compass/utilities";
 @import "h5bp";
 @import "compass_twitter_bootstrap_awesome";
 
 //-----------------------------------------
 // Prepend includes
 //-----------------------------------------
-@include h5bp-normalize;
+// @include h5bp-normalize;
 
 //-----------------------------------------
 // Custom css/controller
 //-----------------------------------------
 @import "home";
+@import "images";
+
 
 //-----------------------------------------
 // Custom application partials

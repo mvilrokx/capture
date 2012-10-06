@@ -6,5 +6,10 @@
 // Document styles
 //-----------------------------------------
 
+// *{
+// 	@include box-sizing(border-box);
+// }
+
 html {}
 body {}
+

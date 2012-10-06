@@ -1,0 +1,31 @@
+.span12
+  #bp-table
+    = will_paginate @pictures
+
+    %table.table.table-striped.table-condensed
+      %thead
+        %tr
+          %th Title
+          %th Description
+          %th Action
+      %tbody
+        - @pictures.each do |picture|
+          %tr[picture]
+            %td= picture.title
+            %td= picture.description
+            %td
+              .btn-group
+                %button.btn.btn-mini.dropdown-toggle{:data => {:toggle => "dropdown"}} 
+                  Action 
+                  %span.caret
+                %ul.dropdown-menu
+                  %li= link_to "<i class='icon-pencil'></i> Edit".html_safe, edit_picture_path(picture), :remote => :true
+                  %li= link_to "<i class='icon-trash'></i> Delete".html_safe, picture_path(picture), :method => :delete, :confirm => "Are you sure?"
+
+    =link_to "Upload new Image", new_picture_path, :class => "btn btn-primary", :remote => true
+
+
+.modal.hide.fade#modal-form
+  .modal-header
+    %h3
+  .modal-body
