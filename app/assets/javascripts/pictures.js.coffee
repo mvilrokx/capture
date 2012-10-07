@@ -7,5 +7,5 @@ $ ->
     # alert(xhr.responseText)
     $('.modal-header h3').text($('.modal-body').find('legend').text())
     $('.modal-body').find('legend').remove()
-    $('#modal-form').modal('show')
+    $('#modal-form').modal()
   )

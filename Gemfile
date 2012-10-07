@@ -15,6 +15,7 @@ gem 'country_select'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'paperclip'
+gem 'cocaine', '~>0.3.2'
 gem 'rmagick'
 
 group :test, :development do
