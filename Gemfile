@@ -16,7 +16,8 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'paperclip'
 gem 'cocaine', '~>0.3.2'
-gem 'rmagick'
+# gem 'rmagick'
+gem 'mini_exiftool'
 
 group :test, :development do
   gem 'mongrel', '1.2.0.pre2'
