@@ -1,29 +1,18 @@
 class Picture < ActiveRecord::Base
-  attr_accessible :title, :description, :captured_image
+  attr_accessible :title, :description, :captured_image, :exif_data
   has_attached_file :captured_image, :styles => { :medium => "200x200>" }
 
- #  after_post_process :extract_exif
-
-	# def extract_exif
-	# 	puts captured_image_file_name
-	# 	#puts captured_image_url
-	# 	puts self.captured_image.path
-	# 	puts captured_image.queued_for_write[:original].path
-	# 	image = MiniExiftool.new captured_image.queued_for_write[:original].path
-	# 	ap image
- # 		puts image['DateTimeOriginal']
-	# end
-
 	def exif
-		image = MiniExiftool.new self.captured_image.path
-	end
-
-	def long
-		sexagesimal_to_decimal(exif.gpslongitude)
+		# I think this is really slow so might be worth caching somehow
+		@exif_date ||= MiniExiftool.new self.captured_image.path
 	end
 
 	def lat
 		sexagesimal_to_decimal(exif.gpslatitude)
+	end
+
+	def long
+		sexagesimal_to_decimal(exif.gpslongitude)
 	end
 
 	def map_url
