@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121005213851) do
+ActiveRecord::Schema.define(:version => 20121008192930) do
 
   create_table "pictures", :force => true do |t|
     t.string   "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20121005213851) do
     t.string   "captured_image_content_type"
     t.integer  "captured_image_file_size"
     t.datetime "captured_image_updated_at"
+    t.binary   "exif_data"
   end
 
 end

@@ -21,6 +21,7 @@ gem 'mini_exiftool'
 
 group :test, :development do
   gem 'mongrel', '1.2.0.pre2'
+  gem 'rack-mini-profiler'
 end
 
 # Gems used only for assets and not required
