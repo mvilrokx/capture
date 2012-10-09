@@ -1,0 +1,11 @@
+= simple_form_for @note, :html => {:class => 'form-horizontal'}, :defaults => {:input_html => {:class => 'row span5'}} do |f|
+  - if f.error_notification
+    .alert.alert-error.fade.in
+      %a.close{:data => {:dismiss => "alert"}, :href => "#"} &times;
+      = f.error_notification
+
+  %legend #{@note.new_record? ? "Upload" : "Edit"} Note
+  = f.input :content, :input_html => { :rows => 4 }
+  .form-actions
+    = f.button :submit, :class => 'btn-primary', :disable_with => "Uploading...", :value => "Upload"
+    = link_to 'Cancel', notes_path, :class => "btn btn-danger"

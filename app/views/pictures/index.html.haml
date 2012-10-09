@@ -17,18 +17,18 @@
             %td= picture.title
             %td= picture.description
             %td
-              %a{:href=>"#", :rel=>"popover", :data=>{:content => "#{image_tag picture.captured_image.url(:medium)}", "original-title" => "Captured Object", :trigger => 'hover'}} 
+              %a{:href=>"#", :rel=>"popover", :data=>{:content => "#{image_tag picture.captured_image.url(:medium)}", "original-title" => "Captured Object", :trigger => 'hover'}}
                 %i.icon-picture
             %td
-              %a{:href=>"#", :rel=>"popover", :data=>{:content => picture.exif.instance_variable_get(:@values).to_json.gsub(/,/,'</br>').html_safe, "original-title" => "Exif Data", :trigger => 'hover'}} 
+              %a{:href=>"#", :rel=>"popover", :data=>{:content => picture.exif.instance_variable_get(:@values).to_json.gsub(/,/,'</br>').html_safe, "original-title" => "Exif Data", :trigger => 'hover'}}
                 %i.icon-paper-clip
             %td
-              %a{:href=>"#", :rel=>"popover", :data=>{:content => "#{image_tag picture.map_url}", "original-title" => "Location", :trigger => 'hover'}} 
+              %a{:href=>"#", :rel=>"popover", :data=>{:content => "#{image_tag picture.map_url}", "original-title" => "Location", :trigger => 'hover'}}
                 %i.icon-map-marker
             %td
               .btn-group
-                %button.btn.btn-mini.dropdown-toggle{:data => {:toggle => "dropdown"}} 
-                  Action 
+                %button.btn.btn-mini.dropdown-toggle{:data => {:toggle => "dropdown"}}
+                  Action
                   %span.caret
                 %ul.dropdown-menu
                   %li= link_to "<i class='icon-pencil'></i> Edit".html_safe, edit_picture_path(picture), :remote => :true

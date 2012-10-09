@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class CapturedObjectsController < ApplicationController
 	respond_to :html
 
 	def index

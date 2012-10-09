@@ -16,3 +16,12 @@ body {}
 #main {
 	min-height: 500px;
 }
+
+#footer {
+	background: #333;
+	color: white;
+	margin-top: 35px;
+	.container{
+		padding: 15px;
+	}
+}

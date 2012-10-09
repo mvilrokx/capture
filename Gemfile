@@ -16,8 +16,8 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'paperclip'
 gem 'cocaine', '~>0.3.2'
-# gem 'rmagick'
 gem 'mini_exiftool'
+# gem 'turbolinks' #doesn' work with twitter bootstrap JS (https://github.com/badcarl/bootstrap/commit/e1f6458e3640a628cdb6b2e4c63950777d46e141)
 
 group :test, :development do
   gem 'mongrel', '1.2.0.pre2'

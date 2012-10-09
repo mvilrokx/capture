@@ -1,0 +1,10 @@
+%table.table.table-striped.table-condensed
+  %thead
+    %tr
+      %th Object
+      %th Date Captured
+  %tbody
+    - @list.each do |item|
+      %tr[item]
+        %td= item.class
+        %td= item.created_at

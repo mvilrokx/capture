@@ -1,24 +1,39 @@
 .container
-	.row
-		.span12
-			%h1 Welcome to Capture
-	.row
-		.span9.offset3
-			%ul.inline-block-list
-				%li
-					%a.top-left{:href => new_picture_path} 
-						%i.icon-camera-retro
-				%li
-					%a.top-right{:href => "#"} 
-						%i.icon-pencil
-	.row
-		.span9.offset3
-			%ul.inline-block-list
-				%li
-					%a.bottom-left{:href => "#"} 
-						%i.icon-user
-				%li
-					%a.bottom-right{:href => "#"} 
-						%i.icon-bullhorn
+  .row
+    .span12
+      %h1 Welcome to Capture
+  .row
+    .span9.offset3
+      %ul.inline-block-list
+        %li
+          %a.top-left{:href => new_picture_path}
+            %i.icon-camera-retro
+        %li
+          %a.top-right{:href => new_note_path}
+            %i.icon-pencil
+  .row
+    .span9.offset3
+      %ul.inline-block-list
+        %li
+          %a.bottom-left{:href => "#"}
+            %i.icon-user
+        %li
+          %a.bottom-right{:href => "#"}
+            %i.icon-bullhorn
 
-
+#slideout
+  #slidecontent
+    %table
+      %thead
+        %tr
+          %th Object
+          %th Date Captured
+      %tbody
+        - @list.each do |item|
+          %tr[item]
+            %td= iconify(item.class)
+            %td= pretty_date_time(item.created_at)
+  #clickme
+    List
+    #counter
+      = @list.count

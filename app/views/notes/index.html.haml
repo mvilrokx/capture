@@ -1,0 +1,31 @@
+.span12
+  #bp-table
+    = will_paginate @notes
+
+    %table.table.table-striped.table-condensed
+      %thead
+        %tr
+          %th Note extract
+          %th Action
+      %tbody
+        - @notes.each do |note|
+          %tr[note]
+            %td= note.content
+            %td
+              .btn-group
+                %button.btn.btn-mini.dropdown-toggle{:data => {:toggle => "dropdown"}}
+                  Action
+                  %span.caret
+                %ul.dropdown-menu
+                  %li= link_to "<i class='icon-pencil'></i> Edit".html_safe, edit_note_path(note), :remote => :true
+                  %li= link_to "<i class='icon-trash'></i> Delete".html_safe, note_path(note), :method => :delete, :confirm => "Are you sure?"
+
+    =link_to "Upload new Note", new_note_path, :class => "btn btn-primary", :remote => true
+
+
+.modal.hide.fade#modal-form
+  .modal-header
+    / %button.close{:type => "button", "aria-hidden" => "true", :data => {:dismiss => "modal"} } &times;
+    %h3
+  .modal-body
+  / .modal-footer

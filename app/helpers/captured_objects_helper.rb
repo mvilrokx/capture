@@ -1,0 +1,2 @@
+module CapturedObjectsHelper
+end
