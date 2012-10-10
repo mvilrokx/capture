@@ -20,20 +20,3 @@
         %li
           %a.bottom-right{:href => "#"}
             %i.icon-bullhorn
-
-#slideout
-  #slidecontent
-    %table
-      %thead
-        %tr
-          %th Object
-          %th Date Captured
-      %tbody
-        - @list.each do |item|
-          %tr[item]
-            %td= iconify(item.class)
-            %td= pretty_date_time(item.created_at)
-  #clickme
-    List
-    #counter
-      = @list.count

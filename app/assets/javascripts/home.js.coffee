@@ -5,12 +5,11 @@ $ ->
 	$('a.side-tab').on('click', (e) ->
 		$('.slide-list').toggle("slide")
 		e.preventDefault()
-
 	)
 
 $ ->
 	$('#clickme').toggle( ->
-		$(this).parent().animate({left:'0px'}, {queue:false, duration: 250})
+		$(this).parent().animate({left:'0px'}, {queue:false, duration: 300, 'bounce'})
 	, ->
-		$(this).parent().animate({left:['-280px','swing']}, {queue:false, duration: 250})
+		$(this).parent().animate({left:'-282px'}, {queue:false, duration: 300, 'bounce'})
 	)

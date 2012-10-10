@@ -1,0 +1,21 @@
+- icons = ['<i class="icon-magic"></i>', '<i class="icon-warning-sign"></i>', '<i class="icon-cogs"></i>']
+#slideout
+  #slidecontent
+    %table
+      %thead
+        %tr
+          %th Object
+          %th Date Captured
+          %th Act
+      %tbody
+        - @list.each do |item|
+          %tr[item]
+            %td= iconify(item.class)
+            %td= pretty_date_time(item.created_at)
+            %td
+              %a{:href => "#", :onclick => "alert('Magic will happen here!')"}
+                = ['<i title="Magically Assign" class="icon-magic"></i>', '<i title="Cannot assign" class="icon-warning-sign"></i>', '<i title="Processing..." class="icon-cogs"></i>'].sample.html_safe
+  #clickme
+    List
+    #counter
+      = @list.count
