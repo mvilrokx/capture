@@ -91,6 +91,9 @@
 		th {
     	border-bottom: 2px solid #fff;
     }
+    td {
+			@include background-image(linear-gradient(top, #333, lighten(#333,3%)));
+    }
 		td, th {
 			text-align: center;
     	padding: 7px; /* 'cellpadding' equivalent */
